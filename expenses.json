@@ -1,0 +1,16 @@
+[
+    {
+        "ID": 1,
+        "Date": "2026-07-13",
+        "Description": "Sage's iPhone 17",
+        "Amount": 68200.0,
+        "InsertTimeStamp": "2026-07-13 09:17:16"
+    },
+    {
+        "ID": 2,
+        "Date": "2026-07-13",
+        "Description": "Mohit's stationary bike",
+        "Amount": 21000.0,
+        "InsertTimeStamp": "2026-07-13 09:17:56"
+    }
+]

@@ -23,6 +23,25 @@ Also since I am going ahead with a json, I will need to have a dictionary of exp
 #### Conclusion 3:
 This design is fine but since most apis return a list which holds a dictionary, let me mimick the same behaviour.
 
+E.g I am going to do this
+`[
+    {
+        "id": 1,
+        ...
+    },
+    {
+        "id": 2,
+        ...
+    }
+]`
+
+instead of this (this was my original thought that I had to change)
+
+`{
+    "1": {...},
+    "2": {...}
+}`
+
 ### Thought 4:
 In case of deleting a records from the expense json, should i take care of non continuous id numbers? Is this even needed? Can it cause confusion? Let's say I deleted expense_id = 2, if I end up making these ids continuous, will the user get confused seeing the expense_id = 2 just after deleting it?
 
@@ -40,6 +59,8 @@ add: Create a new entry in the expenses json file
 
 list: List the json file in a tabular format
 
+show: Show full description of an expense using id. (Added this since list command doesn't show super long descriptions and is truncated to only 27 characters)
+
 summary: Add all the expense and display to user
 
 summary --month: Add all the expenses for a given month and display it to user
@@ -52,9 +73,15 @@ export: Export the expenses data into csv file and download it for the user
 
 ### Thought 7:
 Different functions that I can have
+
 1.) Parse the arguments from the cli tool
+
 2.) Validate the arguments
+
 3.) Fetch expenses json (if exists or else create a new json file)
+
 4.) Perform necessary action (CRUD operations)
+
 5.) Save results to existing json
+
 6.) Export json file to a csv file and let the user download it
